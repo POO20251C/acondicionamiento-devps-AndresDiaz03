@@ -1,0 +1,85 @@
+Actividad de acondicionamiento en desarrollo de software
+
+*Ejercicio 1: Suma de Dígitos*
+
+def suma_digitos(n):
+    sum = 0
+    while n > 0:
+        sum = sum + (n % 10)
+        n = n // 10
+    return sum
+
+print(suma_digitos(1234))
+
+
+*Ejercicio 2: Contar Vocales en una Cadena*
+
+def contar_vocales(c):
+    vocales = "aeiouAEIOU"
+    ans = 0
+    i = 0
+    while i < len(c):
+        if c[i] in vocales:
+            ans += 1
+        i += 1
+    return ans
+
+print(contar_vocales("Hola Mundo"))
+
+
+*Ejercicio 3: Verificar Palíndromo*
+
+def es_palindromo(cad):
+    cad_clean = cad.replace(" ", "").lower()
+    
+    if cad_clean == cad_clean[::-1]:
+        return "Si"
+    else:
+        return "No"
+
+ans = "anita lava la tina"
+result = es_palindromo(ans)
+print(result)
+
+
+*Ejercicio 4: Invertir una Lista de Números*
+
+def invertir_lista(l):
+    l.reverse()
+    return l
+
+ans = "1 2 3 4 5"
+nums = ans.split()
+invertidos = invertir_lista(nums)
+
+for n in invertidos:
+    print(n, end=" ")
+print()
+
+
+*Ejercicio 5: Contar Palabras en una Cadena*
+
+def contar_palabras(cad):
+    p = cad.split()
+    return len(p)
+
+ans = "Hola mundo desde Python"
+cantidad = contar_palabras(ans)
+print(cantidad)
+
+
+*Ejercicio 6: Encontrar el Máximo y Mínimo*
+
+def maximo_minimo(cad):
+    nums = cad.split()
+    l = []
+    for n in nums:
+        l.append(int(n))
+    
+    maximo = max(l)
+    minimo = min(l)
+    return maximo, minimo
+
+ans = "3 1 4 1 5 9"
+maximo, minimo = maximo_minimo(ans)
+print(maximo, minimo)
